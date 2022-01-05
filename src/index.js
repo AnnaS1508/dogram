@@ -31,7 +31,13 @@ function setDetails(anchor) {
 }
 function showDetails() {
     mainContentEl.classList.remove('hidden');
+    
 }
+
 function hideDetails() {
-    mainContentEl.classList.add('hidden') 
+    mainContentEl.classList.add('hidden');
+    if (selectedItem) {
+        selectedItem.classList.remove("selected")
+    }  
+
 }
