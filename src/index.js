@@ -23,6 +23,15 @@ function setDetails(anchor) {
         selectedItem.classList.remove("selected")
     }
     selectedItem = anchor.parentElement;
+
+
+    let audioSelector =[href="${hrefValue}"] .audio;
+    let audioEl=document.querySelector(audioSelector);
+    let audioLink=audioEl.getAttribute("src");
+    let audioAnchor=new Audio(audioLink);
+    audioAnchor.play();
+
+
     //get element with class thumbnails-title inside the given anchor
     let thumbnailsTitleSelector = `[href="${hrefValue}"] .thumbnails-title`;
     let thumbnailsTitleEl = document.querySelector(thumbnailsTitleSelector);
@@ -48,10 +57,6 @@ function hideDetails() {
         selectedItem.classList.remove('selected')
     } 
 
-    let audioSelector =[href="${hrefValue}"] .audio;
-    let audioEL=document.querySelector(audioSelector);
-    let audioLink=audioEL.getAttribute("src");
-    let audioAnchor=new Audio(audioLink);
-    audioAnchor.play();
+    
 }
 
