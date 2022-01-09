@@ -3,6 +3,7 @@ let detailsImage = document.querySelector(".details-image");
 let detailsTitle = document.querySelector(".details-title");
 let mainContentEl = document.querySelector(".main-content");
 
+
 let selectedItem;
 let anchors = 
 document.querySelectorAll(".thumbnails-anchor");//all HTML elements belonging to the clas thumbnails-anchor
@@ -31,13 +32,26 @@ function setDetails(anchor) {
 }
 function showDetails() {
     mainContentEl.classList.remove('hidden');
+    detailsImage.parentElement.classList.add('is-tiny');
+    setTimeout(removeIsTiny);
     
+
+
+}
+function removeIsTiny() {
+    detailsImage.parentElement.classList.remove('is-tiny');
 }
 
 function hideDetails() {
-    mainContentEl.classList.add('hidden');
+    mainContentEl.classList.add('hidden') ;
     if (selectedItem) {
-        selectedItem.classList.remove("selected")
-    }  
+        selectedItem.classList.remove('selected')
+    } 
 
+    let audioSelector =[href="${hrefValue}"] .audio;
+    let audioEL=document.querySelector(audioSelector);
+    let audioLink=audioEL.getAttribute("src");
+    let audioAnchor=new Audio(audioLink);
+    audioAnchor.play();
 }
+
